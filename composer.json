@@ -1,7 +1,7 @@
 {
     "name": "hocmai/hocmai-sdk-client",
-    "description": "Phat sinh cac du lieu bao cao cua he thong boc mai",
-    "keywords": ["hocmai", "package"],
+    "description": "Giup cac lap trinh vien hoc mai nhanh chong truy cap vao he sinh thai cua Hoc Mai de xay dung cac phan mem quan ly",
+    "keywords": ["hocmai", "package", "sdk"],
     "license": "proprietary",
     "authors": [
         {
