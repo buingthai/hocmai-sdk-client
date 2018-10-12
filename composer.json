@@ -1,7 +1,7 @@
 {
-    "name": "hocmai/report-engine-client",
+    "name": "hocmai/hocmai-sdk-client",
     "description": "Phat sinh cac du lieu bao cao cua he thong boc mai",
-    "keywords": ["report", "hocmai", "package"],
+    "keywords": ["hocmai", "package"],
     "license": "proprietary",
     "authors": [
         {
@@ -11,14 +11,14 @@
     ],
     "type": "library",
     "require": {
-		"php": ">=7.0"
+		"php": "^7.0"
     },
 	"require-dev": {
 		"phpunit/phpunit": "5.2.*"
     },
 	"autoload": {
         "psr-4": {
-            "Hocmai\\ReportEngine\\": "src/"
+            "Hocmai\\": "src/"
         }
     }
 }
