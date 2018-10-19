@@ -18,6 +18,9 @@ use Hocmai\Url\HocmaiUrlManipulator;
  */
 class HocmaiRequest
 {
+    /**
+     * @var HocmaiApp
+     */
     protected $app;
 
     protected $accessToken;
@@ -168,6 +171,8 @@ class HocmaiRequest
             $params['access_token'] = $accessToken;
             $params['appsecret_proof'] = $this->getAppSecretProof();
         }
+
+        $params['id_token'] = $this->app->getIdToken();
 
         return $params;
     }

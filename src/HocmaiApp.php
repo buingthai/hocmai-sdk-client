@@ -20,13 +20,15 @@ class HocmaiApp implements \Serializable
 
     protected $secret;
 
+    protected $id_token;
+
     /**
      * @param string $id
      * @param string $secret
      *
      * @throws HocmaiSDKException
      */
-    public function __construct($id, $secret)
+    public function __construct($id, $secret, $id_token)
     {
         if (!is_string($id)
             // Keeping this for BC. Integers greater than PHP_INT_MAX will make is_int() return false
@@ -37,6 +39,7 @@ class HocmaiApp implements \Serializable
         // We cast as a string in case a valid int was set on a 64-bit system and this is unserialised on a 32-bit system
         $this->id = (string) $id;
         $this->secret = $secret;
+        $this->id_token = $id_token;
     }
 
     /**
@@ -57,6 +60,16 @@ class HocmaiApp implements \Serializable
     public function getSecret()
     {
         return $this->secret;
+    }
+
+    /**
+     * return ID Token Google Oauth
+     * @return string
+     *
+     */
+    public function getIdToken()
+    {
+        return $this->id_token;
     }
 
     /**

@@ -9,6 +9,7 @@ use Hocmai\Authentication\AccessToken;
 use Hocmai\HttpClients\HttpClientsFactory;
 use Hocmai\PseudoRandomString\PseudoRandomStringGeneratorFactory;
 use Hocmai\Url\UrlDetectionInterface;
+use TheSeer\Tokenizer\Exception;
 
 /**
  *
@@ -41,6 +42,12 @@ class Hocmai
 
     protected $persistentDataHandler;
 
+
+    /**
+     * @var string la 1 chuoi id token de xac thuc qua google
+     */
+    protected $id_token;
+
     /**
      * @var HocmaiResponse
      */
@@ -56,6 +63,7 @@ class Hocmai
             'persistent_data_handler' => null,
             'pseudo_random_string_generator' => null,
             'url_detection_handler' => null,
+            'id_token' => null,
         ], $config);
 
         if (! $config['app_id']) {
@@ -64,6 +72,10 @@ class Hocmai
 
         if (! $config['app_secret']) {
             throw new \Exception('required "app_secret');
+        }
+
+        if (! $config['id_token']) {
+            throw new \Exception('Required "id_token"');
         }
 
         $this->app = new HocmaiApp($config['app_id'], $config['app_secret']);
