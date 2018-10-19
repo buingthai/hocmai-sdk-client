@@ -5,8 +5,8 @@
 			convertWarningsToExceptions="true"
 			stopOnFailure="true">
 			<testsuites>
-				<testsuite name="Unit Tests">
-					<directory>tests</directory>
+				<testsuite name="Test function hocmai Client">
+					<directory>./tests</directory>
 				</testsuite>
 			</testsuites>
 </phpunit>
