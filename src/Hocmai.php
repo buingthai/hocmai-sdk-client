@@ -78,7 +78,7 @@ class Hocmai
             throw new \Exception('Required "id_token"');
         }
 
-        $this->app = new HocmaiApp($config['app_id'], $config['app_secret']);
+        $this->app = new HocmaiApp($config['app_id'], $config['app_secret'], $config['id_token']);
 
         $this->client = new HocmaiClient(HttpClientsFactory::createHttpClient($config['http_client_handler']));
 
