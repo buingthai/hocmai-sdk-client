@@ -82,6 +82,11 @@ class ItemFactory
         return $this->makeItem(static::BASE_ITEM_PREFIX . 'Common\ProductLine');
     }
 
+    public function makeReport()
+    {
+        return $this->makeItem(static::BASE_ITEM_PREFIX . 'Reports\Table');
+    }
+
     /**
      * Convenience method for creating a GraphAchievement collection.
      *
@@ -205,7 +210,7 @@ class ItemFactory
      *
      * @throws HocmaiSDKException
      */
-    public function validateResponseCastableAsGraphNode()
+    /*public function validateResponseCastableAsGraphNode()
     {
         if (isset($this->decodedBody['data']) && static::isCastableAsGraphEdge($this->decodedBody['data'])) {
             throw new HocmaiSDKException(
@@ -214,12 +219,12 @@ class ItemFactory
                 620
             );
         }
-    }
+    }*/
 
-    public function validateResponseCastableAsItem()
+    /*public function validateResponseCastableAsItem()
     {
 //        if (isset($this->decodedBody['data']) && static::is)
-    }
+    }*/
 
     /**
      * Validates that the return data can be cast as a GraphEdge.

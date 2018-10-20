@@ -88,5 +88,11 @@ class HocmaiResponse
         $factory = new ItemFactory($this);
         return $factory->makeProductLine();
     }
+
+    public function getReport()
+    {
+        $factory = new ItemFactory($this);
+        return $factory->makeReport();
+    }
 }
 
