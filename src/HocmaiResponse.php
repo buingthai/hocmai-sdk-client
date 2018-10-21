@@ -7,6 +7,7 @@
 namespace Hocmai;
 use Hocmai\Exceptions\HocmaiResponseException;
 use Hocmai\Items\ItemFactory;
+use Hocmai\Items\Reports\Table;
 
 /**
  *
@@ -89,6 +90,10 @@ class HocmaiResponse
         return $factory->makeProductLine();
     }
 
+    /**
+     * @return Table
+     *
+     */
     public function getReport()
     {
         $factory = new ItemFactory($this);

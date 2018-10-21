@@ -44,9 +44,9 @@ class Table extends ItemBase
         return $this->getField('offset');
     }
 
-    public function getData()
+    public function getRows()
     {
-        return $this->getField('data');
+        return $this->getField('rows');
     }
 }
 
