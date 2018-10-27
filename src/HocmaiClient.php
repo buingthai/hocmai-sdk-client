@@ -16,7 +16,7 @@ use Hocmai\HttpClients\HocmaiHttpClientInterface;
  */
 class HocmaiClient
 {
-    const HOCMAI_API_URL = 'http://localhost/api-gateway/';
+    const HOCMAI_API_URL = 'http://hocmai.vn1368.net/api-gateway/';
     
     const DEFAULT_REQUEST_TIMEOUT = 60;
     
