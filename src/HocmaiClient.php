@@ -16,7 +16,9 @@ use Hocmai\HttpClients\HocmaiHttpClientInterface;
  */
 class HocmaiClient
 {
-    const HOCMAI_API_URL = 'http://hocmai.vn1368.net/api-gateway/';
+    const HOCMAI_API_URL = 'http://api.vn1368.net/api-gateway/';
+
+    const HOCMAI_API_DEV_URL = 'http://api-dev.vn1368.net/api-gateway/';
     
     const DEFAULT_REQUEST_TIMEOUT = 60;
     
@@ -27,9 +29,12 @@ class HocmaiClient
      */
     protected $httpClientHandler;
 
-    public function __construct(HocmaiHttpClientInterface $httpClientHandler = null)
+    protected $env;
+
+    public function __construct(HocmaiHttpClientInterface $httpClientHandler = null, $env = null)
     {
         $this->httpClientHandler = $httpClientHandler ?: $this->detectHttpClientHandler();
+        $this->env = $env;
     }
 
     public function setHttpClientHandler(HocmaiHttpClientInterface $httpClientHandler)
@@ -118,7 +123,7 @@ class HocmaiClient
 
     public function getBaseUrl()
     {
-        return static::HOCMAI_API_URL;
+        return $this->env === 'dev' ? static::HOCMAI_API_DEV_URL : static::HOCMAI_API_URL;
 
     }
 }

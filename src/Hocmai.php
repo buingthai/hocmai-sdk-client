@@ -42,7 +42,6 @@ class Hocmai
 
     protected $persistentDataHandler;
 
-
     /**
      * @var string la 1 chuoi id token de xac thuc qua google
      */
@@ -64,6 +63,7 @@ class Hocmai
             'pseudo_random_string_generator' => null,
             'url_detection_handler' => null,
             'id_token' => null,
+            'env' => null,
         ], $config);
 
         if (! $config['app_id']) {
@@ -80,7 +80,8 @@ class Hocmai
 
         $this->app = new HocmaiApp($config['app_id'], $config['app_secret'], $config['id_token']);
 
-        $this->client = new HocmaiClient(HttpClientsFactory::createHttpClient($config['http_client_handler']));
+        $this->client = new HocmaiClient(HttpClientsFactory::createHttpClient($config['http_client_handler']),
+            $config['env']);
 
         $this->pseudoRandomStringGenerator = PseudoRandomStringGeneratorFactory::createPseudoRandomStringGenerator(
             $config['pseudo_random_string_generator']
