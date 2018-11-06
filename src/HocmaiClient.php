@@ -35,7 +35,7 @@ class HocmaiClient
     {
         $this->httpClientHandler = $httpClientHandler ?: $this->detectHttpClientHandler();
         if ($env === null) {
-            $this->env = getenv('ENV') ?: 'dev';
+            $this->env = defined('ENV') ? ENV : 'dev';
         } else {
             $this->env = $env;
         }
