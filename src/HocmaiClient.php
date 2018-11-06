@@ -34,7 +34,11 @@ class HocmaiClient
     public function __construct(HocmaiHttpClientInterface $httpClientHandler = null, $env = null)
     {
         $this->httpClientHandler = $httpClientHandler ?: $this->detectHttpClientHandler();
-        $this->env = $env;
+        if ($env === null) {
+            $this->env = getenv('ENV') ?: 'dev';
+        } else {
+            $this->env = $env;
+        }
     }
 
     public function setHttpClientHandler(HocmaiHttpClientInterface $httpClientHandler)
